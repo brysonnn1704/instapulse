@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent-start: #833AB4;
+  --color-accent-mid: #FD1D1D;
+  --color-accent-end: #FCAF45;
+}
+
+* { scrollbar-width: thin; }
+html { scrollbar-gutter: stable; }
+body { @apply bg-white text-zinc-900 antialiased dark:bg-black dark:text-zinc-100; overflow-x: hidden; }
+:root { color-scheme: light dark; }
+:focus-visible { @apply outline-none ring-2 ring-[#833AB4] ring-offset-2 dark:ring-offset-black; }
+
+/* gradient helper */
+.bg-accent-gradient { background: linear-gradient(45deg, #833AB4, #FD1D1D, #FCAF45); }
+.text-accent-gradient { background: linear-gradient(45deg, #833AB4, #FD1D1D, #FCAF45); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.border-accent-gradient { border-image: linear-gradient(45deg, #833AB4, #FD1D1D, #FCAF45) 1; }
+.story-ring { background: linear-gradient(45deg, #833AB4, #FD1D1D, #FCAF45); }
+
+/* masonry */
+.masonry { column-count: 3; column-gap: 6px; }
+@media (max-width: 768px) { .masonry { column-count: 2; } }
+@media (max-width: 480px) { .masonry { column-count: 2; column-gap: 4px; } }
+.masonry-item { break-inside: avoid; margin-bottom: 6px; }
+
+/* hide scrollbar */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
